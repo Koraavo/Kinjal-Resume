@@ -85,11 +85,12 @@ a {
     font-size: 1.7rem;
     padding: 1rem;
     margin-top: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .fa-brands:hover, .fa-envelope:hover {
     color: var(--headings-color);
-    font-size: 2rem;
+    /* font-size: 2rem; */
 }
 
 .me {
