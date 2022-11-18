@@ -194,6 +194,10 @@ a {
     padding: 3.5rem;
 }
 
+.experience {
+    margin-bottom: 5rem;
+}
+
 .time-experience {
     color: var(--headings-color);
 }
