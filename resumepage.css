@@ -246,6 +246,11 @@ h4 {
 
 .references {
     margin-bottom: 1rem;
+    
+}
+
+.reference1 {
+    margin-top: 1rem;
 }
 
 .education-1:last-child, .professional-skill:last-child, .whoami:last-child {
