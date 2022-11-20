@@ -17,7 +17,8 @@ html {
     font-size: 62.5%;
     font-family: sans-serif;
     text-align: justify;
-    background: linear-gradient(-80deg, var(--left-side-background) 70%, var(--headings-color) 60%);
+    color: var(--color-white);
+    background: linear-gradient(-80deg, var(--left-side-background) 60%, var(--headings-color) 40%);
 }
 
 body {
@@ -28,41 +29,39 @@ a {
     text-decoration: none;
 }
 
-.container {
-    /* max-width: 80%; */
-    width: 80%;
-    margin: 5rem auto;
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    gap: 5rem;
-    background: var(--container-background);
-    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, .3);
+/* grid name assignments */
+.name-designation {
+    grid-area: name;
 }
 
-.right-side {
-    /* grid-area: rightside; */
-    padding: 3.5rem;
+.about {
+    grid-area: about;
 }
 
-.experience {
-    margin-bottom: 5rem;
-    
+.myImage {
+    grid-area: myimage;
+}
+.education {
+    grid-area: education;
 }
 
-
-/* all of left side */
-.left-side {
-    background: var(--left-side-background);
-    color: var(--color-white); 
-    padding: 3rem;
-    /* grid-area: leftside; */
-    display: grid;
-    border-radius: 0 .5rem .5rem 0;
+.languages {
+    grid-area: languages;
 }
 
-.whoami {
-    margin-bottom: 1rem;
+.qualities {
+    grid-area: qualities;
 }
+
+.hard-skills {
+    grid-area: hardskills;
+}
+
+.ref {
+    grid-area: ref;
+}
+
+/* global settings */
 
 .headings {
     color: var(--headings-color);
@@ -80,74 +79,49 @@ a {
     font-size: medium;
 }
 
-.contacts {
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
-    gap: 3rem;
-}
-
 .fa-brands, .fa-envelope {
-    color: var(--color-white);
     font-size: 1.7rem;
     padding: 1rem;
     margin-top: 1rem;
-    /* margin-bottom: 1rem; */
+    color: var(--color-white);
 }
 
 .fa-brands:hover, .fa-envelope:hover {
     color: var(--headings-color);
-    /* font-size: 2rem; */
 }
 
-.me {
-    width: 25rem;
+img {
+    max-width: 100%;
+    display: block;
+    text-align: center;
     border-radius: .5rem;
 }
 
-.myImage {
-    text-align: center;
-    margin: 1rem;
+.language, .skill-name, .soft-skills {
+    text-transform: uppercase;
 }
 
-.education-1 {
-    margin-bottom: 1rem;
-    text-align: left;
+.whoami, .education-1, .language-1, .soft-skill, .professional-skill {
+    margin-top: 1rem;
 }
 
-.time, .where-education {
-    font-style: italic;
+.reference1 {
+    text-transform: capitalize;
+}
+
+.ref-desig {
     font-weight: lighter;
+    font-style: italic;
 }
 
 .time {
     color: var(--headings-color);
 }
 
-.language {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    text-transform: uppercase;
+.time, .where-education {
+    font-style: italic;
+    font-weight: lighter;
 }
-
-.soft-skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.soft-skill {
-    text-transform: uppercase;
-}
-
-.professional-skill {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-
 
 /* skill lines */
 .skill-lines {
@@ -180,41 +154,12 @@ a {
     width: 10%;
 }
 
-.skill-name {
-    text-transform: uppercase;
+h4 {
+    color: black;
 }
 
-/* References */
-
-.references {
-    margin-bottom: 1rem;
-}
-.reference1 {
-    text-transform: capitalize;
-}
-
-.ref-desig {
-    font-weight: lighter;
-    font-style: italic;
-}
-
-.education-1:last-child, .professional-skill:last-child, .whoami:last-child {
-    margin-bottom: 0;
-}
-
-
-
-.time-experience {
-    color: var(--headings-color);
-}
-
-.experience-1{
-    text-align: left;
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    gap: 5rem;
-    text-transform: capitalize;
-    margin-bottom: 2rem;
+.experience {
+    margin-bottom: 5rem;    
 }
 
 .company-name {
@@ -227,18 +172,126 @@ a {
     font-weight: lighter;
 }
 
-@media(max-width: 900px){
-    html {
-        background: var(--light-background);
-    }
+.time-experience {
+    color: var(--headings-color);
+}
 
+
+.container {
+    width: min(90%, 100rem);
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, .3);
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    gap: 3rem;
+    background: var(--headings-color);
+    
+}
+
+.left-side {
+    display: grid;
+    background: var(--left-side-background);
+    grid-template-areas: 
+    "name"
+    "myimage"
+    "about"
+    "education"
+    "languages"
+    "qualities"
+    "hardskills"
+    "ref";
+    padding: 3rem;
+}
+
+.right-side {
+    background: var(--light-background);
+    padding: 3rem;
+}
+
+.experience-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.language {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.soft-skills, .professional-skill {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.references {
+    margin-bottom: 1rem;
+}
+
+.education-1:last-child, .professional-skill:last-child, .whoami:last-child {
+    margin-bottom: 0;
+}
+
+@media(max-width:60em){
     .container {
         grid-template-columns: 1fr;
     }
 
-    .experience-1 {
-        grid-template-columns: 1fr;   
+    .left-side {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        grid-template-areas: 
+    "name name"
+    "myimage about"
+    "education hardskills"
+    "languages qualities"
+    "ref ref";
+    }
+
+    .language {
+        flex-direction: column;
+    }
+
+    .references {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+    }
+}
+
+@media(max-width:40em){
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-side {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        grid-template-areas: 
+    "name"
+    "myimage"
+    "about"
+    "education"
+    "hardskills"
+    "languages"
+    "qualities"
+    "ref";
+    }
+
+    .language {
+        flex-direction: row;
+    }
+
+    .references {
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
     }
 
+    .experience-1 {
+        grid-template-columns: 1fr;
+    }
 }
