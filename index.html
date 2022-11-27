@@ -1,26 +1,42 @@
+<!-- https://www.youtube.com/watch?v=zmJV6VN2h2E -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./resumepage.css" />
-  <title>Resume</title>
 
-  
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./resumepage.css" />
+    <title>Resume</title>
   </head>
   <body id="body">
     <!-- script for html2pdf API -->
-    <!-- <div class="html2pdfbutton"> <button id="exportPDF" style="display: block; width: 100px; padding: 10px;">Export PDF</button></div> -->
-    <div class="html2pdfbutton"> <button id="exportPDF" onclick="window.print()">Export PDF</button></div>
-    <div class="container" id="html2pdf">
-      <include src="./left-side.html"></include>
-      <include src="./right-side.html"></include>
+
+    <div class="langWrap">
+      <a href="./index.html" language="en">EN</a>
+      <a href="./german-files/germancontent.html" language="de">DE</a>
     </div>
-    
+    <div class="html2pdfbutton">
+      <button
+        id="exportPDF"
+        style="display: block; width: 100px; padding: 10px"
+      >
+        Export PDF
+      </button>
+    </div>
+    <div class="container" id="html2pdf">
+      <include src="./english-files/left-side.html"></include>
+      <include src="./english-files/right-side.html"></include>
+    </div>
     <script src="https://unpkg.com/htmlincludejs"></script>
 
     <!-- HTML to PDF working version 1-->
@@ -38,7 +54,15 @@
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
     </script> -->
-    
-    
+
+    <!-- <script>
+      const lang = document.querySelector(".langWrap")
+      const langLink = lang.querySelectorAll('a')
+      // console.log(langLink)
+      langLink.forEach(el => {
+        let hrefAttr = el.getAttribute("href")
+        console.log(window.hrefAttr)
+        })
+    </script> -->
   </body>
 </html>

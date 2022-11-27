@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="../resumepage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<div class="langWrap">
+    <!-- <a href="./englishcontent.html" language='english' class="active">EN</a> -->
+    <a href="../index.html" language='en'>EN</a>
+    <a href="../german-files/germancontent.html" language='german'>DE</a>
+</div>
+<div class="html2pdfbutton"> <button id="exportPDF" onclick="window.print()">Export PDF</button></div>
+<div class="container" id="html2pdf" lang="en">
+    <include src="./left-side.html"></include>
+    <include src="./right-side.html"></include>
+</div>
+    <script src="https://unpkg.com/htmlincludejs"></script>

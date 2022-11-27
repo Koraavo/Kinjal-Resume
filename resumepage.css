@@ -20,7 +20,7 @@
 html {
     font-size: 62.5%;
     font-family: sans-serif;
-    text-align: justify;
+    text-align: left;
     color: var(--color-white);
     background: linear-gradient(-80deg, var(--left-side-background) 60%, var(--headings-color) 40%);
     position: relative;
@@ -34,6 +34,19 @@ a {
     text-decoration: none;
 }
 
+.langWrap {
+    display: inline-block;  
+    position: fixed;  
+    top: 4rem;
+    left: 80%;
+}
+
+.langWrap a{
+    color: white;
+    background: var(--headings-color);
+    padding: 0.5rem 1rem;
+    
+}
 
 #exportPDF {
     display: block;
@@ -116,7 +129,7 @@ img {
     border-radius: .5rem;
 }
 
-.language, .skill-name, .soft-skills {
+.language-skills, .skill-name, .soft-skills {
     text-transform: uppercase;
 }
 
@@ -234,15 +247,23 @@ h4 {
     margin-bottom: 3rem;
 }
 
-.language {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+.language-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    text-align: center;
 }
 
 .soft-skills, .professional-skill {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.soft-skill, .language-1 {
+    background: var(--headings-color);
+    padding: .2rem;
 }
 
 .references {
@@ -278,8 +299,12 @@ h4 {
     "ref ref";
     }
 
-    .language {
-        flex-direction: column;
+    .soft-skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .language-skills {
+        grid-template-columns: 1fr;
     }
 
     .references {
@@ -288,6 +313,15 @@ h4 {
         align-items: flex-start;
         
     }
+
+    .langWrap {
+        left: 10%;
+    }
+
+    .langWrap a{
+        background: var(--left-side-background);
+    }
+
 }
 
 @media(max-width:40em){
@@ -309,9 +343,6 @@ h4 {
     "ref";
     }
 
-    .language {
-        flex-direction: row;
-    }
 
     .references {
         display: flex;
@@ -319,9 +350,18 @@ h4 {
         gap: 1rem;
     }
 
-    .experience-1 {
+    .experience-1, .soft-skills {
         grid-template-columns: 1fr;
     }
+
+    .language-skills, .soft-skills, .professional-skill {
+        text-align: left;
+    }
+
+    #exportPDF {
+        left: 40%;
+    }
+
 }
 
 @media print {
