@@ -202,6 +202,11 @@ h4 {
 .tasks {
     color: var(--left-side-background);
     font-weight: lighter;
+    text-transform: capitalize;
+}
+
+.tasks li {
+    margin-top: .3rem;
 }
 
 .time-experience {
@@ -366,6 +371,6 @@ h4 {
 
 @media print {
     html {
-      zoom: 38%;
+      zoom: 30%;
     }
   }
