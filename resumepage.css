@@ -24,11 +24,9 @@ html {
     color: var(--color-white);
     background: linear-gradient(-80deg, var(--left-side-background) 60%, var(--headings-color) 40%);
     position: relative;
+    
 }
-
-body {
-    font-size: 1.6rem;
-}
+/* font-size: clamp(20%, 20vw, 100%); */
 
 a {
     text-decoration: none;
@@ -94,6 +92,11 @@ a {
 }
 
 /* global settings */
+
+/* h3 {
+    
+    font-size: clamp(10%, 10vw, 1.5rem);
+} */
 
 .headings {
     color: var(--headings-color);
@@ -331,6 +334,11 @@ h4 {
         background: var(--left-side-background);
     }
 
+    #exportPDF {
+        width: 8rem;
+        padding: .5rem;
+        font-size: 1rem;
+    }
 }
 
 @media(max-width:40em){
@@ -375,6 +383,6 @@ h4 {
 
 @media print {
     html {
-      zoom: 29%;
+      transform: scale(100%);
     }
-  }
+  } 
