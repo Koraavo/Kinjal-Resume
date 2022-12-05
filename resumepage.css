@@ -26,7 +26,12 @@ html {
     position: relative;
     
 }
-/* font-size: clamp(20%, 20vw, 100%); */
+
+body {
+    /* font-size: 1.6rem; */
+    font-size: clamp(1rem, 10vw, 1.6rem);
+}
+
 
 a {
     text-decoration: none;
